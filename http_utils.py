@@ -19,6 +19,7 @@ def public_request(method, api_url, **payload):
     r_url = api_url
     try:
         r = requests.request(method, r_url, params=payload)
+        # print(r.content.decode())
         r.raise_for_status()
         if r.status_code == 200:
             return True, r.json()

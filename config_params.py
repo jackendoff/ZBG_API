@@ -3,7 +3,8 @@
 from content_safe import API_ID,API_SECRET
 EXCHANGE_HOST = "https://www.zbg.com"
 KLINE_WS_HOST = "ws://192.168.20.13:28080"
-KLINE_HTTP_HOST = KLINE_WS_HOST.replace("wss", "https").replace("ws", "http")
+# KLINE_HTTP_HOST = KLINE_WS_HOST.replace("wss", "https").replace("ws", "http")
+KLINE_HTTP_HOST = 'https://kline.zbg.com'
 
 WEBSOCKET_PATH = "/websocket"
 
@@ -64,5 +65,5 @@ API_GET_KILNES = "/api/data/v1/klines"
 # url查询交易记录
 API_GET_TRADES = "/api/data/v1/trades"
 
-# url获取盘口（市场深度）
+# url获取盘口（市场深度）https://kline.zbg.com/api/data/v1/entrusts
 API_GET_ENTRUSTS = "/api/data/v1/entrusts"

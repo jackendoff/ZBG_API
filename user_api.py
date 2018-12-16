@@ -190,7 +190,7 @@ def get_ticker(marketId, marketName):
 
 
 # 获取k线列表,市场id和名字传一个即可
-def get_klines(marketId, marketName, dataSize, type):
+def get_klines(dataSize=None, type=None, marketId=None, marketName=None):
     if marketId:
         params = {'marketId': marketId, "dataSize": dataSize, "type": type}
     else:
@@ -209,7 +209,7 @@ def get_trades(marketId, marketName, dataSize):
     return status, result
 
 
-# 获取市场盘口列表,市场id和名字传一个即可
+# 获取市场盘口列表,市场id和名字传一个即可 websocket
 def get_entrusts(marketId=None, marketName=None):
     if marketId:
         params = {'marketId': marketId}
@@ -222,7 +222,7 @@ def get_entrusts(marketId=None, marketName=None):
 if __name__ == '__main__':
 
     data = {
-    "currencyTypeName":"qtum",
+    "currencyTypeName": "qtum",
     "pageNum":1,
     "pageSize":20
 }
@@ -230,7 +230,11 @@ if __name__ == '__main__':
     "tab":all,
     "pageIndex":1,
     "pageSize":10}
+
     data3 = {
-        "marketName" : 'zb_qc'
+        "marketId": 329,
+        # 'marketName' = 'ETC_USDT',
+        # 'type': '1M',
+        # 'dataSize': 5
     }
     print(get_entrusts(**data3))
